@@ -49,7 +49,8 @@ This Python script automates interactions with the Monkeytype website using Sele
 
 4. Install the required packages:
     ```
-    pip install -r requirements.txt
+    pip install selenium
+    pip install webdriver_manager
     ```
 
 ## Usage
