@@ -6,9 +6,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 def get_word_from_web(url, delay=0.1):
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())) # install chromium
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     driver.get(url)
-    # driver.find_element(By.CSS_SELECTOR,'active acceptAll').click() # sfocus on the page ; the unwanted bug_4ao5eF8B
     try:
         try:
             while True:
