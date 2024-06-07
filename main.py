@@ -38,17 +38,22 @@ def endCredits(driver):
 
 def runAgain(driver):
     userChoice=input("do you wish to run again (y/n) : ")
-    time.sleep(30)
+    # time.sleep(30)
     if userChoice=='y':
         try:
             next_test_button = driver.find_element(By.ID, 'nextTestButton')
             next_test_button.click()
-            time.sleep(3)
+            time.sleep(1)
             identifyWords(driver,0.1)
         except Exception as e:
             print('Error clicking Next test button:', e)
     elif userChoice=='n':
-        print('bye')
+        print("bye")
+        try:
+            driver.quit()  # Close the browser
+        except Exception as e:
+            pass  # Ignore any exceptions raised by driver.quit()
+        quit()
     else:
         print("invalid input, please type it according to the format")
         runAgain()
