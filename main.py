@@ -38,7 +38,6 @@ def endCredits(driver):
 
 def runAgain(driver):
     userChoice=input("do you wish to run again (y/n) : ")
-    # time.sleep(30)
     if userChoice=='y':
         try:
             next_test_button = driver.find_element(By.ID, 'nextTestButton')
@@ -50,14 +49,22 @@ def runAgain(driver):
     elif userChoice=='n':
         print("bye")
         try:
-            driver.quit()  # Close the browser
+            driver.quit() 
         except Exception as e:
-            pass  # Ignore any exceptions raised by driver.quit()
+            pass 
         quit()
     else:
         print("invalid input, please type it according to the format")
         runAgain()
 
-
+banner=f"""
+███╗   ███╗ ██████╗ ███╗   ██╗██╗  ██╗███████╗██╗   ██╗██████╗  ██████╗ ███╗   ██╗████████╗████████╗██╗   ██╗██████╗ ███████╗
+████╗ ████║██╔═══██╗████╗  ██║██║ ██╔╝██╔════╝╚██╗ ██╔╝██╔══██╗██╔═══██╗████╗  ██║╚══██╔══╝╚══██╔══╝╚██╗ ██╔╝██╔══██╗██╔════╝
+██╔████╔██║██║   ██║██╔██╗ ██║█████╔╝ █████╗   ╚████╔╝ ██║  ██║██║   ██║██╔██╗ ██║   ██║      ██║    ╚████╔╝ ██████╔╝█████╗  
+██║╚██╔╝██║██║   ██║██║╚██╗██║██╔═██╗ ██╔══╝    ╚██╔╝  ██║  ██║██║   ██║██║╚██╗██║   ██║      ██║     ╚██╔╝  ██╔═══╝ ██╔══╝  
+██║ ╚═╝ ██║╚██████╔╝██║ ╚████║██║  ██╗███████╗   ██║   ██████╔╝╚██████╔╝██║ ╚████║   ██║      ██║      ██║   ██║     ███████╗
+╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝   ╚═╝      ╚═╝      ╚═╝   ╚═╝     ╚══════╝
+                                                                                                                             """
+print(banner)
 url = 'https://monkeytype.com/'
 get_word_from_web(url)
