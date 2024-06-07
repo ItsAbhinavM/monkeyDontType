@@ -5,7 +5,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
-def get_word_from_web(url, delay=0.1):
+def get_word_from_web(url, delay=0.05):
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     driver.get(url)
     try:
